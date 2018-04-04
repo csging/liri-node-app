@@ -1,0 +1,26 @@
+{
+  "name": "liri-node-app",
+  "version": "1.0.0",
+  "description": "twitter",
+  "main": "keys.js",
+  "scripts": {
+    "test": "console.log(\"hello does this work?\")"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csging/liri-node-app.git"
+  },
+  "author": "csging",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csging/liri-node-app/issues"
+  },
+  "homepage": "https://github.com/csging/liri-node-app#readme",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "http-server": "^0.11.1",
+    "node-spotify-api": "^1.0.7",
+    "request": "^2.85.0",
+    "twitter": "^1.7.1"
+  }
+}
