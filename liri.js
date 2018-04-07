@@ -8,6 +8,8 @@ var Twitter = require("twitter"); //Twiiter
 var Spotify = require('node-spotify-api');
 var spotify = require("spotify"); //Spotify
 var menu = process.argv[2];
+
+
 // var songName = process.argv[3];
 var movieName = '';
 var songName = '';
@@ -42,12 +44,7 @@ function myTweets() {
 
     console.log("ALL YOUR TWEETS ARE BELONG TO US");
     var screenName = { screen_name: 'chrisralis', count: 20 };
-    var client = new Twitter({
-        consumer_key: 'kWwBxfb6D1GeqN5BSizNtSQOP',
-        consumer_secret: 'V584vMrbb2CqTpucuE1IwGjDihzqhUg0qDH67sUY00wuIjF0JR',
-        access_token_key: '980918148860862464-LuZu8QlhMT7MmIDfE4FzywowAIzXII4',
-        access_token_secret: 'tWsp4jJz64LTjgmZ4Rjpb31DSHPVIWTVFox6UWpaoxJi2',
-    });
+    var client = new Twitter(keys.twitter);
     // var params = { screen_name: 'nodejs' };
     client.get('statuses/user_timeline', screenName, function(error, tweets, response) {
         if (!error) {
@@ -69,13 +66,8 @@ function spotifySearch(songName) {
     });
 
     // songName = songName.split(' ').join('+');
-    var spotify = new Spotify({
-        // // keys.spotify;
-        // id: process.env.SPOTIFY_ID,
-        // secret: process.env.SPOTIFY_SECRET
-        id: '465a6a4eb701493aa572fc82f3f343d5',
-        secret: 'f459a3c9caa440a2a42db59c2901e404',
-    });
+    console.log(keys.spotify)
+    var spotify = new Spotify(keys.spotify);
     spotify.search({ type: 'track', query: songName }, function(err, data) {
         if (err) {
             console.log('Error occurred: ' + err);
