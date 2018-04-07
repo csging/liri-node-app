@@ -1,0 +1,10 @@
+User Command: node liri.js do-what-it-says
+
+User Command: spotifySearch
+
+User Command: node liri.js my-tweets
+
+User Command: node liri.js spotify-this
+
+User Command: spotifySearch
+
